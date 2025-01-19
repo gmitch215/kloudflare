@@ -149,10 +149,10 @@ fun KotlinMultiplatformExtension.configureSourceSets() {
     sourceSets
         .matching { it.name !in listOf("main", "test") }
         .all {
-            val srcDir = if (name.endsWith("Test")) "test" else "main"
+            val srcDir = if ("Test" in name) "test" else "main"
             val resourcesPrefix = if (name.endsWith("Test")) "test-" else ""
             val platform = when {
-                name.endsWith("Main") || name.endsWith("Test") -> name.dropLast(4)
+                (name.endsWith("Main") || name.endsWith("Test")) && "android" !in name -> name.dropLast(4)
                 else -> name.substringBefore(name.first { it.isUpperCase() })
             }
 
