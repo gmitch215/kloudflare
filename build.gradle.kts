@@ -141,6 +141,7 @@ kotlin {
 
         wasmJsMain.dependencies {
             implementation("io.ktor:ktor-client-js:$ktorVersion")
+            implementation("org.jetbrains.kotlinx:kotlinx-browser:0.3")
         }
     }
 }
