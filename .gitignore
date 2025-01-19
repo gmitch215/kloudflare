@@ -1,0 +1,14 @@
+.idea/
+.vscode/
+node_modules/
+.gradle/
+.kotlin/
+build/
+*.podspec
+local.properties
+kotlin-js-store/
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
