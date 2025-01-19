@@ -5,8 +5,6 @@ import io.ktor.client.call.body
 import io.ktor.client.engine.*
 import io.ktor.client.request.*
 import io.ktor.http.*
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 
 /**
  * The Root URL for the Cloudflare API.
@@ -134,6 +132,27 @@ class Kloudflare(
             if (body != null)
                 setBody(body)
 
+
+            block()
+        }?.result ?: throw KloudflareException("No result returned")
+    }
+
+    /**
+     * Performs a PUT request to the Cloudflare API.
+     * @param B The type of the body.
+     * @param T The type of the result.
+     * @param subUrl The sub-URL to request.
+     * @param body The body of the request.
+     * @param block A lambda that is called to configure the request.
+     * @return The result of the request.
+     * @throws KloudflareException If the request failed.
+     */
+    suspend fun <B, T> put(subUrl: String, body: B? = null, block: HttpRequestBuilder.() -> Unit = {}): T {
+        return request<T>(subUrl) {
+            method = HttpMethod.Put
+
+            if (body != null)
+                setBody(body)
 
             block()
         }?.result ?: throw KloudflareException("No result returned")
