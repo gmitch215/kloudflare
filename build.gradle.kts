@@ -5,9 +5,9 @@ import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
 plugins {
-    kotlin("multiplatform") version "2.1.0"
-    kotlin("plugin.serialization") version "2.1.0"
-    id("org.jetbrains.kotlin.native.cocoapods") version "2.1.0"
+    kotlin("multiplatform") version "2.1.10"
+    kotlin("plugin.serialization") version "2.1.10"
+    id("org.jetbrains.kotlin.native.cocoapods") version "2.1.10"
     id("org.jetbrains.dokka") version "2.0.0"
     id("com.android.library") version "8.8.0"
     id("com.vanniktech.maven.publish") version "0.30.0"
