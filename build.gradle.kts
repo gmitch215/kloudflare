@@ -102,7 +102,7 @@ kotlin {
     watchosArm64()
 
     sourceSets {
-        val ktorVersion = "3.0.3"
+        val ktorVersion = "3.1.0"
 
         commonMain.dependencies {
             implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
