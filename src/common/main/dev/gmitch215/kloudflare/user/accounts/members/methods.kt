@@ -197,17 +197,6 @@ class UpdateMemberWithPolicies(
  * @return The updated member.
  */
 suspend fun Kloudflare.updateMember(accountId: String, member: UpdateMemberWithRoles) = put<UpdateMemberWithRoles, Member>("accounts/$accountId/members/${member.id}", member)
-
-/**
- * Update a member.
- *
- * This request requires using [Kloudflare.email] and [Kloudflare.apiKey], and does not support [Kloudflare.apiToken].
- * @param accountId The ID of the account the member is in.
- * @param member A lambda used to update the member.
- * @return The updated member.
- */
-suspend fun Kloudflare.updateMember(accountId: String, member: UpdateMemberWithRoles.() -> Unit) = updateMember(accountId, UpdateMemberWithRoles().apply(member))
-
 /**
  * Update a member.
  *
@@ -217,13 +206,3 @@ suspend fun Kloudflare.updateMember(accountId: String, member: UpdateMemberWithR
  * @return The updated member.
  */
 suspend fun Kloudflare.updateMember(accountId: String, member: UpdateMemberWithPolicies) = put<UpdateMemberWithPolicies, Member>("accounts/$accountId/members/${member.policies.first().id}", member)
-
-/**
- * Update a member.
- *
- * This request requires using [Kloudflare.email] and [Kloudflare.apiKey], and does not support [Kloudflare.apiToken].
- * @param accountId The ID of the account the member is in.
- * @param member A lambda used to update the member.
- * @return The updated member.
- */
-suspend fun Kloudflare.updateMember(accountId: String, member: UpdateMemberWithPolicies.() -> Unit) = updateMember(accountId, UpdateMemberWithPolicies().apply(member))
