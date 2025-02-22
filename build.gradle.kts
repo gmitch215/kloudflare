@@ -23,7 +23,9 @@ val v = "0.1.0"
 
 group = "dev.gmitch215"
 version = "${if (project.hasProperty("snapshot")) "$v-SNAPSHOT" else v}${project.findProperty("suffix")?.toString()?.run { "-${this}" } ?: ""}"
-description = "Multiplatform API for Cloudflare"
+
+val desc = "Multiplatform API for Cloudflare"
+description = desc
 
 repositories {
     google()
@@ -260,7 +262,7 @@ mavenPublishing {
 
     pom {
         name.set("kloudflare")
-        description.set(project.description)
+        description.set(desc)
         url.set("https://github.com/gmitch215/kloudflare")
         inceptionYear.set("2025")
 
@@ -295,8 +297,9 @@ npmPublish {
 
     packages.forEach {
         it.packageJson {
+            name = "@gmitch215/${project.name}"
             version = project.version.toString()
-            description = project.description
+            description = desc
             license = "MIT"
 
             author {
@@ -306,7 +309,7 @@ npmPublish {
 
             repository {
                 type = "git"
-                url = "https://github.com/gmitch215/kloudflare"
+                url = "git+https://github.com/gmitch215/kloudflare.git"
             }
         }
     }
