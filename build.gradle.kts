@@ -1,6 +1,7 @@
 @file:OptIn(ExperimentalWasmDsl::class)
 
 import com.vanniktech.maven.publish.SonatypeHost
+import dev.petuska.npm.publish.task.NpmPublishTask
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
@@ -11,6 +12,7 @@ plugins {
     id("org.jetbrains.dokka") version "2.0.0"
     id("com.android.library") version "8.7.3"
     id("com.vanniktech.maven.publish") version "0.30.0"
+    id("dev.petuska.npm.publish") version "3.5.3"
 
     `maven-publish`
     jacoco
@@ -48,29 +50,15 @@ kotlin {
                     timeout = "10m"
                 }
             }
-        }
-        nodejs {
-            testTask {
-                useMocha {
-                    timeout = "10m"
-                }
-            }
 
             useCommonJs()
         }
 
-        binaries.executable()
+        binaries.library()
         generateTypeScriptDefinitions()
     }
 //    wasmJs {
 //        browser {
-//            testTask {
-//                useMocha {
-//                    timeout = "10m"
-//                }
-//            }
-//        }
-//        nodejs {
 //            testTask {
 //                useMocha {
 //                    timeout = "10m"
@@ -300,4 +288,47 @@ mavenPublishing {
 
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL, true)
     signAllPublications()
+}
+
+npmPublish {
+    readme = file("README.md")
+
+    packages.forEach {
+        it.packageJson {
+            version = project.version.toString()
+            description = project.description
+            license = "MIT"
+
+            author {
+                name = "Gregory Mitchell"
+                email = "me@gmitch215.xyz"
+            }
+
+            repository {
+                type = "git"
+                url = "https://github.com/gmitch215/kloudflare"
+            }
+        }
+    }
+
+    registries {
+        register("npmjs") {
+            uri.set("https://registry.npmjs.org")
+            authToken.set(System.getenv("NPM_TOKEN"))
+        }
+
+        register("GithubPackages") {
+            uri.set("https://npm.pkg.github.com/gmitch215")
+            authToken.set(System.getenv("GITHUB_TOKEN"))
+        }
+
+        register("CalculusGames") {
+            val releases = "https://repo.calcugames.xyz/repository/npm-releases"
+            val snapshots = "https://repo.calcugames.xyz/repository/npm-snapshots"
+
+            uri.set(if (project.version.toString().endsWith("SNAPSHOT")) snapshots else releases)
+            username.set(System.getenv("NEXUS_USERNAME"))
+            password.set(System.getenv("NEXUS_PASSWORD"))
+        }
+    }
 }
