@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>dev.gmitch215.kloudflare</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+    <nav class="navigation theme-dark" id="navigation-wrapper">
+            <a class="library-name--link" href="../../index.html">
+                    kloudflare
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+0.1.0        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active=""
+                        data-filter=":/androidMain">android</button>
+                <button class="platform-tag platform-selector jvm-like" data-active=""
+                        data-filter=":/androidRelease">androidJvm</button>
+                <button class="platform-tag platform-selector common-like" data-active=""
+                        data-filter=":/appleMain">apple</button>
+                <button class="platform-tag platform-selector common-like" data-active=""
+                        data-filter=":/commonMain">common</button>
+                <button class="platform-tag platform-selector common-like" data-active=""
+                        data-filter=":/iosMain">ios</button>
+                <button class="platform-tag platform-selector js-like" data-active=""
+                        data-filter=":/jsMain">js</button>
+                <button class="platform-tag platform-selector jvm-like" data-active=""
+                        data-filter=":/jvmMain">jvm</button>
+                <button class="platform-tag platform-selector common-like" data-active=""
+                        data-filter=":/linuxMain">linux</button>
+                <button class="platform-tag platform-selector common-like" data-active=""
+                        data-filter=":/macosMain">macos</button>
+                <button class="platform-tag platform-selector native-like" data-active=""
+                        data-filter=":/mingwMain">mingw</button>
+                <button class="platform-tag platform-selector common-like" data-active=""
+                        data-filter=":/tvosMain">tvos</button>
+                <button class="platform-tag platform-selector common-like" data-active=""
+                        data-filter=":/watchosMain">watchos</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/androidMain"
+                                       data-filter=":/androidMain"/>
+                                <span class="checkbox--icon"></span>
+                                android
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/androidRelease"
+                                       data-filter=":/androidRelease"/>
+                                <span class="checkbox--icon"></span>
+                                androidJvm
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/appleMain"
+                                       data-filter=":/appleMain"/>
+                                <span class="checkbox--icon"></span>
+                                apple
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/commonMain"
+                                       data-filter=":/commonMain"/>
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/iosMain"
+                                       data-filter=":/iosMain"/>
+                                <span class="checkbox--icon"></span>
+                                ios
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option js-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/jsMain"
+                                       data-filter=":/jsMain"/>
+                                <span class="checkbox--icon"></span>
+                                js
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/jvmMain"
+                                       data-filter=":/jvmMain"/>
+                                <span class="checkbox--icon"></span>
+                                jvm
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/linuxMain"
+                                       data-filter=":/linuxMain"/>
+                                <span class="checkbox--icon"></span>
+                                linux
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/macosMain"
+                                       data-filter=":/macosMain"/>
+                                <span class="checkbox--icon"></span>
+                                macos
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option native-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/mingwMain"
+                                       data-filter=":/mingwMain"/>
+                                <span class="checkbox--icon"></span>
+                                mingw
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/tvosMain"
+                                       data-filter=":/tvosMain"/>
+                                <span class="checkbox--icon"></span>
+                                tvos
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/watchosMain"
+                                       data-filter=":/watchosMain"/>
+                                <span class="checkbox--icon"></span>
+                                watchos
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </div>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    kloudflare
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="package" id="content" pageIds="kloudflare::dev.gmitch215.kloudflare////PointingToDeclaration//610307337">
+  <div class="breadcrumbs"><a href="../../index.html">kloudflare</a><span class="delimiter">/</span><span class="current">dev.gmitch215.kloudflare</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button><button class="section-tab" data-togglable="PROPERTY,EXTENSION_PROPERTY">Properties</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="638857471%2FClasslikes%2F1558683979" anchor-label="Id" id="638857471%2FClasslikes%2F1558683979" data-filterable-set=":/commonMain"></a>
+          <div class="table-row" data-filterable-current=":/commonMain" data-filterable-set=":/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-id/index.html"><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="638857471%2FClasslikes%2F1558683979"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-id/index.html">Id</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>id<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Represents a response with only an <code class="lang-kotlin">id</code> field. This class is unique to Kloudflare and is not present in the Cloudflare API.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1113113015%2FClasslikes%2F1558683979" anchor-label="Key" id="-1113113015%2FClasslikes%2F1558683979" data-filterable-set=":/commonMain"></a>
+          <div class="table-row" data-filterable-current=":/commonMain" data-filterable-set=":/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-key/index.html"><span><span>Key</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1113113015%2FClasslikes%2F1558683979"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-key/index.html">Key</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>key<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Represents a response with only a <code class="lang-kotlin">key</code> field. This class is unique to Kloudflare and is not present in the Cloudflare API.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1701635625%2FClasslikes%2F1558683979" anchor-label="Kloudflare" id="1701635625%2FClasslikes%2F1558683979" data-filterable-set=":/commonMain"></a>
+          <div class="table-row" data-filterable-current=":/commonMain" data-filterable-set=":/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-kloudflare/index.html"><span><span>Kloudflare</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1701635625%2FClasslikes%2F1558683979"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-kloudflare/index.html">Kloudflare</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>email<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>apiKey<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>apiToken<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">apply<span class="token operator">: </span><a href="-kloudflare/index.html">Kloudflare</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator"> = </span>{}</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">The main entrypoint for the Cloudflare API.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1311805418%2FClasslikes%2F1558683979" anchor-label="KloudflareException" id="1311805418%2FClasslikes%2F1558683979" data-filterable-set=":/commonMain"></a>
+          <div class="table-row" data-filterable-current=":/commonMain" data-filterable-set=":/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-kloudflare-exception/index.html"><span>Kloudflare</span><wbr></wbr><span><span>Exception</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1311805418%2FClasslikes%2F1558683979"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-kloudflare-exception/index.html">KloudflareException</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">message<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-exception/index.html">Exception</a></div><div class="brief "><p class="paragraph">An exception that is thrown when an error occurs during a request to the Cloudflare API.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1586237558%2FClasslikes%2F-649084563" anchor-label="OS" id="1586237558%2FClasslikes%2F-649084563" data-filterable-set=":/jsMain"></a>
+          <div class="table-row" data-filterable-current=":/jsMain" data-filterable-set=":/jsMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-o-s/index.html"><span><span>OS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1586237558%2FClasslikes%2F-649084563"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":/jsMain" data-filterable-set=":/jsMain" data-active="" data-toggle=":/jsMain">js</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":/jsMain"><div class="symbol monospace"><span class="token keyword">external </span><span class="token keyword">object </span><a href="-o-s/index.html">OS</a></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1633483944%2FClasslikes%2F1558683979" anchor-label="PageDirection" id="-1633483944%2FClasslikes%2F1558683979" data-filterable-set=":/commonMain"></a>
+          <div class="table-row" data-filterable-current=":/commonMain" data-filterable-set=":/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-page-direction/index.html"><span>Page</span><wbr></wbr><span><span>Direction</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1633483944%2FClasslikes%2F1558683979"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">enum </span><a href="-page-direction/index.html">PageDirection</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-page-direction/index.html">PageDirection</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Represents a direction for paginated requests.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1557729947%2FClasslikes%2F1558683979" anchor-label="PageParams" id="-1557729947%2FClasslikes%2F1558683979" data-filterable-set=":/commonMain"></a>
+          <div class="table-row" data-filterable-current=":/commonMain" data-filterable-set=":/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-page-params/index.html"><span>Page</span><wbr></wbr><span><span>Params</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1557729947%2FClasslikes%2F1558683979"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">open </span><span class="token keyword">class </span><a href="-page-params/index.html">PageParams</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>direction<span class="token operator">: </span><a href="-page-direction/index.html">PageDirection</a><span class="token operator"> = </span>PageDirection.DESCENDING<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>page<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>perPage<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">20</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Represents parameters for paginated requests.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="278252747%2FClasslikes%2F1558683979" anchor-label="ResponseInfo" id="278252747%2FClasslikes%2F1558683979" data-filterable-set=":/commonMain"></a>
+          <div class="table-row" data-filterable-current=":/commonMain" data-filterable-set=":/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-response-info/index.html"><span>Response</span><wbr></wbr><span><span>Info</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="278252747%2FClasslikes%2F1558683979"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-response-info/index.html">ResponseInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>status<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>message<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Represents responses from the Cloudflare API.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1424134077%2FClasslikes%2F1558683979" anchor-label="Result" id="1424134077%2FClasslikes%2F1558683979" data-filterable-set=":/commonMain"></a>
+          <div class="table-row" data-filterable-current=":/commonMain" data-filterable-set=":/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-result/index.html"><span><span>Result</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1424134077%2FClasslikes%2F1558683979"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/commonMain"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="kotlinx.serialization/Serializable///PointingToDeclaration/"><span class="token annotation builtin">Serializable</span></span></div></div><span class="token keyword">data </span><span class="token keyword">class </span><a href="-result/index.html">Result</a><span class="token operator">&lt;</span><a href="-result/index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>errors<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="-response-info/index.html">ResponseInfo</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>messages<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="-response-info/index.html">ResponseInfo</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>success<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>result<span class="token operator">: </span><a href="-result/index.html">T</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Represents the result of an API request to Cloudflare. This class is unique to Kloudflare and is not present in the Cloudflare API.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-757220704%2FProperties%2F-207203829" anchor-label="engine" id="-757220704%2FProperties%2F-207203829" data-filterable-set=":/commonMain,:/androidRelease,:/androidMain,:/appleMain,:/jsMain,:/jvmMain,:/linuxMain,:/mingwMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":/commonMain,:/androidRelease,:/androidMain,:/appleMain,:/jsMain,:/jvmMain,:/linuxMain,:/mingwMain" data-filterable-set=":/commonMain,:/androidRelease,:/androidMain,:/appleMain,:/jsMain,:/jvmMain,:/linuxMain,:/mingwMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="engine.html"><span><span>engine</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-757220704%2FProperties%2F-207203829"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":/androidMain" data-filterable-set=":/androidMain" data-active="" data-toggle=":/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":/androidRelease" data-filterable-set=":/androidRelease" data-toggle=":/androidRelease">androidJvm</button><button class="platform-bookmark" data-filterable-current=":/appleMain" data-filterable-set=":/appleMain" data-toggle=":/appleMain">apple</button><button class="platform-bookmark" data-filterable-current=":/commonMain" data-filterable-set=":/commonMain" data-toggle=":/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":/jsMain" data-filterable-set=":/jsMain" data-toggle=":/jsMain">js</button><button class="platform-bookmark" data-filterable-current=":/jvmMain" data-filterable-set=":/jvmMain" data-toggle=":/jvmMain">jvm</button><button class="platform-bookmark" data-filterable-current=":/linuxMain" data-filterable-set=":/linuxMain" data-toggle=":/linuxMain">linux</button><button class="platform-bookmark" data-filterable-current=":/mingwMain" data-filterable-set=":/mingwMain" data-toggle=":/mingwMain">mingw</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="-kloudflare/index.html">Kloudflare</a><span class="token punctuation">.</span><a href="engine.html">engine</a><span class="token operator">: </span><span data-unresolved-link="io.ktor.client.engine/HttpClientEngine///PointingToDeclaration/">HttpClientEngine</span></div></div><div class="content sourceset-dependent-content" data-togglable=":/androidRelease"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="-kloudflare/index.html">Kloudflare</a><span class="token punctuation">.</span><a href="engine.html">engine</a><span class="token operator">: </span><span data-unresolved-link="io.ktor.client.engine/HttpClientEngine///PointingToDeclaration/">HttpClientEngine</span></div><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="-kloudflare/index.html">Kloudflare</a><span class="token punctuation">.</span><a href="engine.html">engine</a><span class="token operator">: </span><span data-unresolved-link="io.ktor.client.engine/HttpClientEngine///PointingToDeclaration/">HttpClientEngine</span></div></div><div class="content sourceset-dependent-content" data-togglable=":/appleMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="-kloudflare/index.html#1701635625%2FMain%2F1287810253">Kloudflare</a><span class="token punctuation">.</span><a href="engine.html">engine</a><span class="token operator">: </span><span data-unresolved-link="io.ktor.client.engine/HttpClientEngine///PointingToDeclaration/">HttpClientEngine</span></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">val </span><a href="-kloudflare/index.html">Kloudflare</a><span class="token punctuation">.</span><a href="engine.html">engine</a><span class="token operator">: </span><span data-unresolved-link="io.ktor.client.engine/HttpClientEngine///PointingToDeclaration/">HttpClientEngine</span></div><div class="brief "><p class="paragraph">The Ktor HTTP client engine to use when making requests to the Cloudflare API.</p></div></div><div class="content sourceset-dependent-content" data-togglable=":/jsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="-kloudflare/index.html">Kloudflare</a><span class="token punctuation">.</span><a href="engine.html">engine</a><span class="token operator">: </span><span data-unresolved-link="io.ktor.client.engine/HttpClientEngine///PointingToDeclaration/">HttpClientEngine</span></div></div><div class="content sourceset-dependent-content" data-togglable=":/jvmMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="-kloudflare/index.html">Kloudflare</a><span class="token punctuation">.</span><a href="engine.html">engine</a><span class="token operator">: </span><span data-unresolved-link="io.ktor.client.engine/HttpClientEngine///PointingToDeclaration/">HttpClientEngine</span></div></div><div class="content sourceset-dependent-content" data-togglable=":/linuxMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="-kloudflare/index.html#1701635625%2FMain%2F382357633">Kloudflare</a><span class="token punctuation">.</span><a href="engine.html">engine</a><span class="token operator">: </span><span data-unresolved-link="io.ktor.client.engine/HttpClientEngine///PointingToDeclaration/">HttpClientEngine</span></div></div><div class="content sourceset-dependent-content" data-togglable=":/mingwMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="-kloudflare/index.html#1701635625%2FMain%2F1028470001">Kloudflare</a><span class="token punctuation">.</span><a href="engine.html">engine</a><span class="token operator">: </span><span data-unresolved-link="io.ktor.client.engine/HttpClientEngine///PointingToDeclaration/">HttpClientEngine</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1283235187%2FProperties%2F1558683979" anchor-label="ROOT_URL" id="1283235187%2FProperties%2F1558683979" data-filterable-set=":/commonMain"></a>
+          <div class="table-row" data-filterable-current=":/commonMain" data-filterable-set=":/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-o-o-t_-u-r-l.html"><span>ROOT_</span><wbr></wbr><span>URL</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1283235187%2FProperties%2F1558683979"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/commonMain"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-r-o-o-t_-u-r-l.html">ROOT_URL</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">The Root URL for the Cloudflare API.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1012004782%2FProperties%2F417519594" anchor-label="userAgent" id="1012004782%2FProperties%2F417519594" data-filterable-set=":/iosMain,:/macosMain,:/tvosMain,:/watchosMain,:/commonMain,:/androidRelease,:/androidMain,:/jsMain,:/jvmMain,:/linuxMain,:/mingwMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":/iosMain,:/macosMain,:/tvosMain,:/watchosMain,:/commonMain,:/androidRelease,:/androidMain,:/jsMain,:/jvmMain,:/linuxMain,:/mingwMain" data-filterable-set=":/iosMain,:/macosMain,:/tvosMain,:/watchosMain,:/commonMain,:/androidRelease,:/androidMain,:/jsMain,:/jvmMain,:/linuxMain,:/mingwMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="user-agent.html"><span>user</span><wbr></wbr><span><span>Agent</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1012004782%2FProperties%2F417519594"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":/androidMain" data-filterable-set=":/androidMain" data-active="" data-toggle=":/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":/androidRelease" data-filterable-set=":/androidRelease" data-toggle=":/androidRelease">androidJvm</button><button class="platform-bookmark" data-filterable-current=":/commonMain" data-filterable-set=":/commonMain" data-toggle=":/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":/iosMain" data-filterable-set=":/iosMain" data-toggle=":/iosMain">ios</button><button class="platform-bookmark" data-filterable-current=":/jsMain" data-filterable-set=":/jsMain" data-toggle=":/jsMain">js</button><button class="platform-bookmark" data-filterable-current=":/jvmMain" data-filterable-set=":/jvmMain" data-toggle=":/jvmMain">jvm</button><button class="platform-bookmark" data-filterable-current=":/linuxMain" data-filterable-set=":/linuxMain" data-toggle=":/linuxMain">linux</button><button class="platform-bookmark" data-filterable-current=":/macosMain" data-filterable-set=":/macosMain" data-toggle=":/macosMain">macos</button><button class="platform-bookmark" data-filterable-current=":/mingwMain" data-filterable-set=":/mingwMain" data-toggle=":/mingwMain">mingw</button><button class="platform-bookmark" data-filterable-current=":/tvosMain" data-filterable-set=":/tvosMain" data-toggle=":/tvosMain">tvos</button><button class="platform-bookmark" data-filterable-current=":/watchosMain" data-filterable-set=":/watchosMain" data-toggle=":/watchosMain">watchos</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="-kloudflare/index.html">Kloudflare</a><span class="token punctuation">.</span><a href="user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/androidRelease"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="-kloudflare/index.html">Kloudflare</a><span class="token punctuation">.</span><a href="user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="-kloudflare/index.html">Kloudflare</a><span class="token punctuation">.</span><a href="user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">val </span><a href="-kloudflare/index.html">Kloudflare</a><span class="token punctuation">.</span><a href="user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">The user agent to use when making requests to the Cloudflare API.</p></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="/&amp;lt;Error class: unknown class&amp;gt;///PointingToDeclaration/">&lt;Error class: unknown class&gt;</span><span class="token punctuation">.</span><a href="user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/jsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="-kloudflare/index.html">Kloudflare</a><span class="token punctuation">.</span><a href="user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/jvmMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="-kloudflare/index.html">Kloudflare</a><span class="token punctuation">.</span><a href="user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/linuxMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="-kloudflare/index.html#1701635625%2FMain%2F382357633">Kloudflare</a><span class="token punctuation">.</span><a href="user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/macosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="/&amp;lt;Error class: unknown class&amp;gt;///PointingToDeclaration/">&lt;Error class: unknown class&gt;</span><span class="token punctuation">.</span><a href="user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/mingwMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="-kloudflare/index.html#1701635625%2FMain%2F1028470001">Kloudflare</a><span class="token punctuation">.</span><a href="user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/tvosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="/&amp;lt;Error class: unknown class&amp;gt;///PointingToDeclaration/">&lt;Error class: unknown class&gt;</span><span class="token punctuation">.</span><a href="user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/watchosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><span data-unresolved-link="/&amp;lt;Error class: unknown class&amp;gt;///PointingToDeclaration/">&lt;Error class: unknown class&gt;</span><span class="token punctuation">.</span><a href="user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="405266064%2FFunctions%2F-649084563" anchor-label="isNodeJs" id="405266064%2FFunctions%2F-649084563" data-filterable-set=":/jsMain"></a>
+          <div class="table-row" data-filterable-current=":/jsMain" data-filterable-set=":/jsMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-node-js.html"><span>is</span><wbr></wbr><span>Node</span><wbr></wbr><span><span>Js</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="405266064%2FFunctions%2F-649084563"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":/jsMain" data-filterable-set=":/jsMain" data-active="" data-toggle=":/jsMain">js</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":/jsMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="is-node-js.html"><span class="token function">isNodeJs</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>© 2025 Copyright</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
