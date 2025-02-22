@@ -132,7 +132,6 @@ class Kloudflare(
             if (body != null)
                 setBody(body)
 
-
             block()
         }?.result ?: throw KloudflareException("No result returned")
     }
