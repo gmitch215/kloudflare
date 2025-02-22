@@ -188,7 +188,7 @@ jobs:
 
   publish:
     runs-on: macos-latest
-    needs: build
+    needs: [build, test]
     name: Publish to Repository
     if: ${{ github.event_name != 'pull_request' && github.ref_name == 'master' }}
     timeout-minutes: 60
