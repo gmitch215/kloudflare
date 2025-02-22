@@ -9,7 +9,7 @@ plugins {
     kotlin("plugin.serialization") version "2.1.10"
     id("org.jetbrains.kotlin.native.cocoapods") version "2.1.10"
     id("org.jetbrains.dokka") version "2.0.0"
-    id("com.android.library") version "8.8.1"
+    id("com.android.library") version "8.7.3"
     id("com.vanniktech.maven.publish") version "0.30.0"
 
     `maven-publish`
@@ -62,27 +62,27 @@ kotlin {
         binaries.executable()
         generateTypeScriptDefinitions()
     }
-    wasmJs {
-        browser {
-            testTask {
-                useMocha {
-                    timeout = "10m"
-                }
-            }
-        }
-        nodejs {
-            testTask {
-                useMocha {
-                    timeout = "10m"
-                }
-            }
-
-            useCommonJs()
-        }
-
-        binaries.executable()
-        generateTypeScriptDefinitions()
-    }
+//    wasmJs {
+//        browser {
+//            testTask {
+//                useMocha {
+//                    timeout = "10m"
+//                }
+//            }
+//        }
+//        nodejs {
+//            testTask {
+//                useMocha {
+//                    timeout = "10m"
+//                }
+//            }
+//
+//            useCommonJs()
+//        }
+//
+//        binaries.executable()
+//        generateTypeScriptDefinitions()
+//    }
 
     mingwX64()
     macosX64()
@@ -139,10 +139,10 @@ kotlin {
             implementation("io.ktor:ktor-client-js:$ktorVersion")
         }
 
-        wasmJsMain.dependencies {
-            implementation("io.ktor:ktor-client-js:$ktorVersion")
-            implementation("org.jetbrains.kotlinx:kotlinx-browser:0.3")
-        }
+//        wasmJsMain.dependencies {
+//            implementation("io.ktor:ktor-client-js:$ktorVersion")
+//            implementation("org.jetbrains.kotlinx:kotlinx-browser:0.3")
+//        }
     }
 }
 
