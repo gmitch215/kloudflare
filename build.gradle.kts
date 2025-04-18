@@ -1,5 +1,6 @@
 import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig.Mode
 import java.time.Duration
 import java.time.temporal.ChronoUnit
 
@@ -45,15 +46,20 @@ kotlin {
     jvm()
     js {
         browser {
+            commonWebpackConfig {
+                outputFileName = "${project.name}-${project.version}.js"
+            }
+
             webpackTask {
-                mainOutputFileName = "${project.name}-${project.version}.js"
+                if (!project.hasProperty("snapshot"))
+                    mode = Mode.PRODUCTION
+
                 output.library = "kasciffy"
             }
 
             testTask {
                 useKarma {
                     useSourceMapSupport()
-                    timeout.set(Duration.of(10, ChronoUnit.MINUTES))
 
                     compilation.dependencies {
                         implementation(npm("karma-detect-browsers", "^2.3"))
