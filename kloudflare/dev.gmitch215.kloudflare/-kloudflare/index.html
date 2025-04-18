@@ -57,14 +57,22 @@
                         data-filter=":/appleMain">apple</button>
                 <button class="platform-tag platform-selector common-like" data-active=""
                         data-filter=":/commonMain">common</button>
+                <button class="platform-tag platform-selector common-like" data-active=""
+                        data-filter=":/iosMain">ios</button>
                 <button class="platform-tag platform-selector js-like" data-active=""
                         data-filter=":/jsMain">js</button>
                 <button class="platform-tag platform-selector jvm-like" data-active=""
                         data-filter=":/jvmMain">jvm</button>
                 <button class="platform-tag platform-selector common-like" data-active=""
                         data-filter=":/linuxMain">linux</button>
+                <button class="platform-tag platform-selector common-like" data-active=""
+                        data-filter=":/macosMain">macos</button>
                 <button class="platform-tag platform-selector native-like" data-active=""
                         data-filter=":/mingwMain">mingw</button>
+                <button class="platform-tag platform-selector common-like" data-active=""
+                        data-filter=":/tvosMain">tvos</button>
+                <button class="platform-tag platform-selector common-like" data-active=""
+                        data-filter=":/watchosMain">watchos</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
                         data-role="dropdown-toggle"
@@ -111,6 +119,14 @@
                                 common
                             </label>
                         </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/iosMain"
+                                       data-filter=":/iosMain"/>
+                                <span class="checkbox--icon"></span>
+                                ios
+                            </label>
+                        </li>
                         <li role="option" class="dropdown--option platform-selector-option js-like" tabindex="0">
                             <label class="checkbox">
                                 <input type="checkbox" class="checkbox--input" id=":/jsMain"
@@ -135,12 +151,36 @@
                                 linux
                             </label>
                         </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/macosMain"
+                                       data-filter=":/macosMain"/>
+                                <span class="checkbox--icon"></span>
+                                macos
+                            </label>
+                        </li>
                         <li role="option" class="dropdown--option platform-selector-option native-like" tabindex="0">
                             <label class="checkbox">
                                 <input type="checkbox" class="checkbox--input" id=":/mingwMain"
                                        data-filter=":/mingwMain"/>
                                 <span class="checkbox--icon"></span>
                                 mingw
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/tvosMain"
+                                       data-filter=":/tvosMain"/>
+                                <span class="checkbox--icon"></span>
+                                tvos
+                            </label>
+                        </li>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/watchosMain"
+                                       data-filter=":/watchosMain"/>
+                                <span class="checkbox--icon"></span>
+                                watchos
                             </label>
                         </li>
                 </ul>
@@ -244,7 +284,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="client.html">client</a><span class="token operator">: </span><span data-unresolved-link="io.ktor.client/HttpClient///PointingToDeclaration/">HttpClient</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="client.html">client</a><span class="token operator">: </span><span data-unresolved-link="io.ktor.client/HttpClient///PointingToDeclaration/">HttpClient</span></div><div class="brief "><p class="paragraph">The HTTP client used to make requests to the Cloudflare API.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -281,19 +321,19 @@
               </div>
             </div>
           </div>
-<a data-name="-480197336%2FProperties%2F1493077420" anchor-label="userAgent" id="-480197336%2FProperties%2F1493077420" data-filterable-set=":/commonMain,:/androidRelease,:/androidMain,:/jsMain,:/jvmMain,:/linuxMain,:/mingwMain"></a>
-          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":/commonMain,:/androidRelease,:/androidMain,:/jsMain,:/jvmMain,:/linuxMain,:/mingwMain" data-filterable-set=":/commonMain,:/androidRelease,:/androidMain,:/jsMain,:/jvmMain,:/linuxMain,:/mingwMain">
+<a data-name="-480197336%2FProperties%2F417519594" anchor-label="userAgent" id="-480197336%2FProperties%2F417519594" data-filterable-set=":/commonMain,:/androidRelease,:/androidMain,:/iosMain,:/jsMain,:/jvmMain,:/linuxMain,:/macosMain,:/mingwMain,:/tvosMain,:/watchosMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":/commonMain,:/androidRelease,:/androidMain,:/iosMain,:/jsMain,:/jvmMain,:/linuxMain,:/macosMain,:/mingwMain,:/tvosMain,:/watchosMain" data-filterable-set=":/commonMain,:/androidRelease,:/androidMain,:/iosMain,:/jsMain,:/jvmMain,:/linuxMain,:/macosMain,:/mingwMain,:/tvosMain,:/watchosMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../user-agent.html"><span>user</span><wbr></wbr><span><span>Agent</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-480197336%2FProperties%2F1493077420"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-480197336%2FProperties%2F417519594"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
                   <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
-                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":/androidMain" data-filterable-set=":/androidMain" data-active="" data-toggle=":/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":/androidRelease" data-filterable-set=":/androidRelease" data-toggle=":/androidRelease">androidJvm</button><button class="platform-bookmark" data-filterable-current=":/commonMain" data-filterable-set=":/commonMain" data-toggle=":/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":/jsMain" data-filterable-set=":/jsMain" data-toggle=":/jsMain">js</button><button class="platform-bookmark" data-filterable-current=":/jvmMain" data-filterable-set=":/jvmMain" data-toggle=":/jvmMain">jvm</button><button class="platform-bookmark" data-filterable-current=":/linuxMain" data-filterable-set=":/linuxMain" data-toggle=":/linuxMain">linux</button><button class="platform-bookmark" data-filterable-current=":/mingwMain" data-filterable-set=":/mingwMain" data-toggle=":/mingwMain">mingw</button></div>
-<div class="content sourceset-dependent-content" data-togglable=":/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="index.html">Kloudflare</a><span class="token punctuation">.</span><a href="../user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/androidRelease"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="index.html">Kloudflare</a><span class="token punctuation">.</span><a href="../user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="index.html">Kloudflare</a><span class="token punctuation">.</span><a href="../user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">val </span><a href="index.html">Kloudflare</a><span class="token punctuation">.</span><a href="../user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">The user agent to use when making requests to the Cloudflare API.</p></div></div><div class="content sourceset-dependent-content" data-togglable=":/jsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="index.html">Kloudflare</a><span class="token punctuation">.</span><a href="../user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/jvmMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="index.html">Kloudflare</a><span class="token punctuation">.</span><a href="../user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/linuxMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="index.html#1701635625%2FMain%2F382357633">Kloudflare</a><span class="token punctuation">.</span><a href="../user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/mingwMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="index.html#1701635625%2FMain%2F1028470001">Kloudflare</a><span class="token punctuation">.</span><a href="../user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div>                  </div>
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":/androidMain" data-filterable-set=":/androidMain" data-active="" data-toggle=":/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":/androidRelease" data-filterable-set=":/androidRelease" data-toggle=":/androidRelease">androidJvm</button><button class="platform-bookmark" data-filterable-current=":/commonMain" data-filterable-set=":/commonMain" data-toggle=":/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":/iosMain" data-filterable-set=":/iosMain" data-toggle=":/iosMain">ios</button><button class="platform-bookmark" data-filterable-current=":/jsMain" data-filterable-set=":/jsMain" data-toggle=":/jsMain">js</button><button class="platform-bookmark" data-filterable-current=":/jvmMain" data-filterable-set=":/jvmMain" data-toggle=":/jvmMain">jvm</button><button class="platform-bookmark" data-filterable-current=":/linuxMain" data-filterable-set=":/linuxMain" data-toggle=":/linuxMain">linux</button><button class="platform-bookmark" data-filterable-current=":/macosMain" data-filterable-set=":/macosMain" data-toggle=":/macosMain">macos</button><button class="platform-bookmark" data-filterable-current=":/mingwMain" data-filterable-set=":/mingwMain" data-toggle=":/mingwMain">mingw</button><button class="platform-bookmark" data-filterable-current=":/tvosMain" data-filterable-set=":/tvosMain" data-toggle=":/tvosMain">tvos</button><button class="platform-bookmark" data-filterable-current=":/watchosMain" data-filterable-set=":/watchosMain" data-toggle=":/watchosMain">watchos</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="index.html">Kloudflare</a><span class="token punctuation">.</span><a href="../user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/androidRelease"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="index.html">Kloudflare</a><span class="token punctuation">.</span><a href="../user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="index.html">Kloudflare</a><span class="token punctuation">.</span><a href="../user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">val </span><a href="index.html">Kloudflare</a><span class="token punctuation">.</span><a href="../user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">The user agent to use when making requests to the Cloudflare API.</p></div></div><div class="content sourceset-dependent-content" data-togglable=":/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="index.html#1701635625%2FMain%2F1409029107">Kloudflare</a><span class="token punctuation">.</span><a href="../user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/jsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="index.html">Kloudflare</a><span class="token punctuation">.</span><a href="../user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/jvmMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="index.html">Kloudflare</a><span class="token punctuation">.</span><a href="../user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/linuxMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="index.html#1701635625%2FMain%2F382357633">Kloudflare</a><span class="token punctuation">.</span><a href="../user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/macosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="index.html#1701635625%2FMain%2F-1232351169">Kloudflare</a><span class="token punctuation">.</span><a href="../user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/mingwMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="index.html#1701635625%2FMain%2F1028470001">Kloudflare</a><span class="token punctuation">.</span><a href="../user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/tvosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="index.html#1701635625%2FMain%2F-263620821">Kloudflare</a><span class="token punctuation">.</span><a href="../user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div><div class="content sourceset-dependent-content" data-togglable=":/watchosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">val </span><a href="index.html#1701635625%2FMain%2F1971178431">Kloudflare</a><span class="token punctuation">.</span><a href="../user-agent.html">userAgent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div>                  </div>
                 </div>
               </div>
             </div>

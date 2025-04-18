@@ -202,8 +202,6 @@ $dokka.location:dev.gmitch215.kloudflare.user/ReportType/values/#/PointingToDecl
 $dokka.location:dev.gmitch215.kloudflare////PointingToDeclaration/kloudflare/dev.gmitch215.kloudflare/index.html
 $dokka.location:dev.gmitch215.kloudflare//ROOT_URL/#/PointingToDeclaration/kloudflare/dev.gmitch215.kloudflare/-r-o-o-t_-u-r-l.html
 $dokka.location:dev.gmitch215.kloudflare//engine/dev.gmitch215.kloudflare.Kloudflare#/PointingToDeclaration/kloudflare/dev.gmitch215.kloudflare/engine.html
-$dokka.location:dev.gmitch215.kloudflare//isNodeJs/#/PointingToDeclaration/kloudflare/dev.gmitch215.kloudflare/is-node-js.html
-$dokka.location:dev.gmitch215.kloudflare//userAgent/[Error type: Unresolved type for Kloudflare]#/PointingToDeclaration/kloudflare/dev.gmitch215.kloudflare/user-agent.html
 $dokka.location:dev.gmitch215.kloudflare//userAgent/dev.gmitch215.kloudflare.Kloudflare#/PointingToDeclaration/kloudflare/dev.gmitch215.kloudflare/user-agent.html
 $dokka.location:dev.gmitch215.kloudflare/Id///PointingToDeclaration/kloudflare/dev.gmitch215.kloudflare/-id/index.html
 $dokka.location:dev.gmitch215.kloudflare/Id/Id/#kotlin.String/PointingToDeclaration/kloudflare/dev.gmitch215.kloudflare/-id/-id.html
@@ -226,9 +224,6 @@ $dokka.location:dev.gmitch215.kloudflare/Kloudflare/put/#kotlin.String#TypeParam
 $dokka.location:dev.gmitch215.kloudflare/Kloudflare/request/#kotlin.String#kotlin.Function1[io.ktor.client.request.HttpRequestBuilder,kotlin.Unit]/PointingToDeclaration/kloudflare/dev.gmitch215.kloudflare/-kloudflare/request.html
 $dokka.location:dev.gmitch215.kloudflare/KloudflareException///PointingToDeclaration/kloudflare/dev.gmitch215.kloudflare/-kloudflare-exception/index.html
 $dokka.location:dev.gmitch215.kloudflare/KloudflareException/KloudflareException/#kotlin.String/PointingToDeclaration/kloudflare/dev.gmitch215.kloudflare/-kloudflare-exception/-kloudflare-exception.html
-$dokka.location:dev.gmitch215.kloudflare/OS///PointingToDeclaration/kloudflare/dev.gmitch215.kloudflare/-o-s/index.html
-$dokka.location:dev.gmitch215.kloudflare/OS/platform/#/PointingToDeclaration/kloudflare/dev.gmitch215.kloudflare/-o-s/platform.html
-$dokka.location:dev.gmitch215.kloudflare/OS/release/#/PointingToDeclaration/kloudflare/dev.gmitch215.kloudflare/-o-s/release.html
 $dokka.location:dev.gmitch215.kloudflare/PageDirection.ASCENDING///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}kloudflare/dev.gmitch215.kloudflare/-page-direction/-a-s-c-e-n-d-i-n-g/index.html
 $dokka.location:dev.gmitch215.kloudflare/PageDirection.DESCENDING///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}kloudflare/dev.gmitch215.kloudflare/-page-direction/-d-e-s-c-e-n-d-i-n-g/index.html
 $dokka.location:dev.gmitch215.kloudflare/PageDirection///PointingToDeclaration/kloudflare/dev.gmitch215.kloudflare/-page-direction/index.html
