@@ -1,18 +1,16 @@
-@file:OptIn(ExperimentalWasmDsl::class)
-
 import com.vanniktech.maven.publish.SonatypeHost
-import dev.petuska.npm.publish.task.NpmPublishTask
-import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import java.time.Duration
+import java.time.temporal.ChronoUnit
 
 plugins {
-    kotlin("multiplatform") version "2.1.20"
-    kotlin("plugin.serialization") version "2.1.20"
-    id("org.jetbrains.kotlin.native.cocoapods") version "2.1.20"
+    kotlin("multiplatform") version "2.1.10"
+    kotlin("plugin.serialization") version "2.1.10"
+    //noinspection GradleDependency
+    id("org.jetbrains.kotlin.native.cocoapods") version "2.1.10"
     id("org.jetbrains.dokka") version "2.0.0"
-    id("com.android.library") version "8.9.1"
+    id("com.android.library") version "8.7.3"
     id("com.vanniktech.maven.publish") version "0.31.0"
-    id("dev.petuska.npm.publish") version "3.5.3"
 
     `maven-publish`
     jacoco
@@ -47,32 +45,31 @@ kotlin {
     jvm()
     js {
         browser {
-            testTask {
-                useMocha {
-                    timeout = "10m"
-                }
+            webpackTask {
+                mainOutputFileName = "${project.name}-${project.version}.js"
+                output.library = "kasciffy"
             }
 
-            useCommonJs()
+            testTask {
+                useKarma {
+                    useSourceMapSupport()
+                    timeout.set(Duration.of(10, ChronoUnit.MINUTES))
+
+                    compilation.dependencies {
+                        implementation(npm("karma-detect-browsers", "^2.3"))
+                    }
+
+                    useChromeHeadless()
+                    useChromiumHeadless()
+                    useFirefoxHeadless()
+                }
+            }
         }
 
         binaries.library()
+        binaries.executable()
         generateTypeScriptDefinitions()
     }
-//    wasmJs {
-//        browser {
-//            testTask {
-//                useMocha {
-//                    timeout = "10m"
-//                }
-//            }
-//
-//            useCommonJs()
-//        }
-//
-//        binaries.executable()
-//        generateTypeScriptDefinitions()
-//    }
 
     mingwX64()
     macosX64()
@@ -128,11 +125,6 @@ kotlin {
         jsMain.dependencies {
             implementation("io.ktor:ktor-client-js:$ktorVersion")
         }
-
-//        wasmJsMain.dependencies {
-//            implementation("io.ktor:ktor-client-js:$ktorVersion")
-//            implementation("org.jetbrains.kotlinx:kotlinx-browser:0.3")
-//        }
     }
 }
 
@@ -169,6 +161,14 @@ android {
 tasks {
     clean {
         delete("kotlin-js-store")
+    }
+
+    named("jsBrowserProductionLibraryDistribution") {
+        dependsOn("jsProductionExecutableCompileSync")
+    }
+
+    named("jsBrowserProductionWebpack") {
+        dependsOn("jsProductionLibraryCompileSync")
     }
 
     register("jvmJacocoTestReport", JacocoReport::class) {
@@ -290,48 +290,4 @@ mavenPublishing {
 
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL, true)
     signAllPublications()
-}
-
-npmPublish {
-    readme = file("README.md")
-
-    packages.forEach {
-        it.packageJson {
-            name = "@gmitch215/${project.name}"
-            version = project.version.toString()
-            description = desc
-            license = "MIT"
-
-            author {
-                name = "Gregory Mitchell"
-                email = "me@gmitch215.xyz"
-            }
-
-            repository {
-                type = "git"
-                url = "git+https://github.com/gmitch215/kloudflare.git"
-            }
-        }
-    }
-
-    registries {
-        register("npmjs") {
-            uri.set("https://registry.npmjs.org")
-            authToken.set(System.getenv("NPM_TOKEN"))
-        }
-
-        register("GithubPackages") {
-            uri.set("https://npm.pkg.github.com/gmitch215")
-            authToken.set(System.getenv("GITHUB_TOKEN"))
-        }
-
-        register("CalculusGames") {
-            val releases = "https://repo.calcugames.xyz/repository/npm-releases"
-            val snapshots = "https://repo.calcugames.xyz/repository/npm-snapshots"
-
-            uri.set(if (project.version.toString().endsWith("SNAPSHOT")) snapshots else releases)
-            username.set(System.getenv("NEXUS_USERNAME"))
-            password.set(System.getenv("NEXUS_PASSWORD"))
-        }
-    }
 }

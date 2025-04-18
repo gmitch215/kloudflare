@@ -1,8 +1,11 @@
+@file:OptIn(DelicateCoroutinesApi::class)
+
 package dev.gmitch215.kloudflare
 
-import io.ktor.client.engine.HttpClientEngine
-import io.ktor.client.engine.js.Js
+import io.ktor.client.engine.*
+import io.ktor.client.engine.js.*
 import kotlinx.browser.window
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 
 actual val Kloudflare.engine: HttpClientEngine
@@ -11,13 +14,5 @@ actual val Kloudflare.engine: HttpClientEngine
         dispatcher = Dispatchers.Default
     }
 
-fun isNodeJs(): Boolean = js("typeof process !== 'undefined' && process.versions && process.versions.node") as Boolean
-
 actual val Kloudflare.userAgent: String
-    get() = if (isNodeJs()) "Kloudflare/1.0, ${OS.platform()} ${OS.release()}" else "Kloudflare/1.0, ${window.navigator.userAgent}"
-
-@JsModule("os")
-external object OS {
-    fun platform(): String
-    fun release(): String
-}
+    get() = "Kloudflare/1.0, ${window.navigator.userAgent}"

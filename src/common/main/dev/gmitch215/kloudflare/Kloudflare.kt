@@ -1,7 +1,7 @@
 package dev.gmitch215.kloudflare
 
 import io.ktor.client.*
-import io.ktor.client.call.body
+import io.ktor.client.call.*
 import io.ktor.client.engine.*
 import io.ktor.client.request.*
 import io.ktor.http.*
@@ -41,6 +41,9 @@ class Kloudflare(
     apply: Kloudflare.() -> Unit = {}
 ) {
 
+    /**
+     * The HTTP client used to make requests to the Cloudflare API.
+     */
     val client = HttpClient(engine) {
         expectSuccess = false
 
