@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 
 /**
  * Represents the result of an API request to Cloudflare.
- * This class is unique to Kloudflare and is not present in the Cloudflare API.
+ * This class represents the "Envelope" type of the Cloudflare API.
  * @property errors A list of errors that occurred during the request.
  * @property messages A list of messages sent during the request.
  * @property success Whether the request was successful.
@@ -13,10 +13,29 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class Result<T>(
-    val errors: List<ResponseInfo>,
-    val messages: List<ResponseInfo>,
+    val errors: List<ResponseInfo> = emptyList(),
+    val messages: List<ResponseInfo> = emptyList(),
     val success: Boolean = true,
-    val result: T? = null
+    val result: T? = null,
+    @SerialName("result_info")
+    val resultInfo: ResultInfo? = null,
+)
+
+/**
+ * Represents optional result information for paginated results.
+ * @property count The number of items in the current page.
+ * @property page The current page number.
+ * @property perPage The number of items per page.
+ * @property totalCount The total number of items across all pages.
+ */
+@Serializable
+data class ResultInfo(
+    val count: Int = 0,
+    val page: Int = 1,
+    @SerialName("per_page")
+    val perPage: Int = 0,
+    @SerialName("total_count")
+    val totalCount: Int = 0
 )
 
 /**
