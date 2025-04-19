@@ -111,11 +111,11 @@ class Kloudflare(
      * @return The result of the request.
      * @throws KloudflareException If the request failed.
      */
-    suspend fun <T> get(subUrl: String, block: HttpRequestBuilder.() -> Unit = {}): T {
+    suspend fun <T> get(subUrl: String, block: HttpRequestBuilder.() -> Unit = {}): Result<T> {
         return request<T>(subUrl) {
             method = HttpMethod.Get
             block()
-        }?.result ?: throw KloudflareException("No result returned")
+        } ?: throw KloudflareException("No result returned")
     }
 
     /**
@@ -128,7 +128,7 @@ class Kloudflare(
      * @return The result of the request.
      * @throws KloudflareException If the request failed.
      */
-    suspend fun <B, T> post(subUrl: String, body: B? = null, block: HttpRequestBuilder.() -> Unit = {}): T {
+    suspend fun <B, T> post(subUrl: String, body: B? = null, block: HttpRequestBuilder.() -> Unit = {}): Result<T> {
         return request<T>(subUrl) {
             method = HttpMethod.Post
 
@@ -136,7 +136,7 @@ class Kloudflare(
                 setBody(body)
 
             block()
-        }?.result ?: throw KloudflareException("No result returned")
+        } ?: throw KloudflareException("No result returned")
     }
 
     /**
@@ -149,7 +149,7 @@ class Kloudflare(
      * @return The result of the request.
      * @throws KloudflareException If the request failed.
      */
-    suspend fun <B, T> put(subUrl: String, body: B? = null, block: HttpRequestBuilder.() -> Unit = {}): T {
+    suspend fun <B, T> put(subUrl: String, body: B? = null, block: HttpRequestBuilder.() -> Unit = {}): Result<T> {
         return request<T>(subUrl) {
             method = HttpMethod.Put
 
@@ -157,7 +157,28 @@ class Kloudflare(
                 setBody(body)
 
             block()
-        }?.result ?: throw KloudflareException("No result returned")
+        } ?: throw KloudflareException("No result returned")
+    }
+
+    /**
+     * Performs a PATCH request to the Cloudflare API.
+     * @param B The type of the body.
+     * @param T The type of the result.
+     * @param subUrl The sub-URL to request.
+     * @param body The body of the request.
+     * @param block A lambda that is called to configure the request.
+     * @return The result of the request.
+     * @throws KloudflareException If the request failed.
+     */
+    suspend fun <B, T> patch(subUrl: String, body: B? = null, block: HttpRequestBuilder.() -> Unit = {}): Result<T> {
+        return request<T>(subUrl) {
+            method = HttpMethod.Patch
+
+            if (body != null)
+                setBody(body)
+
+            block()
+        } ?: throw KloudflareException("No result returned")
     }
 
     /**
@@ -168,11 +189,11 @@ class Kloudflare(
      * @return The result of the request.
      * @throws KloudflareException If the request failed.
      */
-    suspend fun <T> delete(subUrl: String, block: HttpRequestBuilder.() -> Unit = {}): T {
+    suspend fun <T> delete(subUrl: String, block: HttpRequestBuilder.() -> Unit = {}): Result<T> {
         return request<T>(subUrl) {
             method = HttpMethod.Delete
             block()
-        }?.result ?: throw KloudflareException("No result returned")
+        } ?: throw KloudflareException("No result returned")
     }
 
 }
