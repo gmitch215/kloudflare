@@ -312,3 +312,29 @@ class AbuseReportResponse(
  */
 suspend fun Kloudflare.submitAbuseReport(accountId: String, report: AbuseReport)
     = post<InternalAbuseReport, AbuseReportResponse>("/accounts/$accountId/abuse_reports/${report.type.name.lowercase()}", InternalAbuseReport(report))
+
+/**
+ * Represents an edit user request.
+ * @property country The country of the user.
+ * @property firstName The first name of the user.
+ * @property lastName The last name of the user.
+ * @property telephone The telephone number of the user.
+ * @property zipcode The zip code of the user.
+ */
+class EditUser(
+    var country: String? = null,
+    @SerialName("first_name")
+    var firstName: String? = null,
+    @SerialName("last_name")
+    var lastName: String? = null,
+    var telephone: String? = null,
+    val zipcode: String? = null,
+)
+
+/**
+ * Sends an edit user request.
+ * @param editUser The edit user request to send.
+ * @return The response from the API.
+ */
+suspend fun Kloudflare.editUser(editUser: EditUser)
+    = patch<EditUser, Unit>("/user", editUser)
