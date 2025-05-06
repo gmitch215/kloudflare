@@ -10,7 +10,7 @@ plugins {
     //noinspection GradleDependency
     id("org.jetbrains.kotlin.native.cocoapods") version "2.1.20"
     id("org.jetbrains.dokka") version "2.0.0"
-    id("com.android.library") version "8.9.2"
+    id("com.android.library") version "8.10.0"
     id("com.vanniktech.maven.publish") version "0.31.0"
 
     `maven-publish`
