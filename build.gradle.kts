@@ -5,13 +5,13 @@ import java.time.Duration
 import java.time.temporal.ChronoUnit
 
 plugins {
-    kotlin("multiplatform") version "2.1.20"
-    kotlin("plugin.serialization") version "2.1.20"
+    kotlin("multiplatform") version "2.1.21"
+    kotlin("plugin.serialization") version "2.1.21"
     //noinspection GradleDependency
-    id("org.jetbrains.kotlin.native.cocoapods") version "2.1.20"
+    id("org.jetbrains.kotlin.native.cocoapods") version "2.1.21"
     id("org.jetbrains.dokka") version "2.0.0"
-    id("com.android.library") version "8.9.2"
-    id("com.vanniktech.maven.publish") version "0.31.0"
+    id("com.android.library") version "8.10.0"
+    id("com.vanniktech.maven.publish") version "0.32.0"
 
     `maven-publish`
     jacoco
