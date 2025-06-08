@@ -1,14 +1,12 @@
 import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig.Mode
-import java.time.Duration
-import java.time.temporal.ChronoUnit
 
 plugins {
     kotlin("multiplatform") version "2.1.21"
     kotlin("plugin.serialization") version "2.1.21"
     //noinspection GradleDependency
-    id("org.jetbrains.kotlin.native.cocoapods") version "2.1.21"
+    kotlin("native.cocoapods") version "2.1.21"
     id("org.jetbrains.dokka") version "2.0.0"
     id("com.android.library") version "8.10.0"
     id("com.vanniktech.maven.publish") version "0.32.0"
@@ -54,7 +52,7 @@ kotlin {
                 if (!project.hasProperty("snapshot"))
                     mode = Mode.PRODUCTION
 
-                output.library = "kasciffy"
+                output.library = "kloudflare"
             }
 
             testTask {
