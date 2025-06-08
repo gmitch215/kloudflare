@@ -1,5 +1,7 @@
 package dev.gmitch215.kloudflare.user.accounts.roles
 
+import dev.gmitch215.kloudflare.Identifiable
+import dev.gmitch215.kloudflare.Nameable
 import dev.gmitch215.kloudflare.user.accounts.Account
 import dev.gmitch215.kloudflare.user.accounts.members.Member
 import kotlinx.serialization.Serializable
@@ -13,8 +15,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class Role(
-    val id: String,
+    override val id: String,
     val description: String,
-    val name: String,
+    override val name: String,
     val permissions: RolePermissions
-)
+) : Identifiable, Nameable

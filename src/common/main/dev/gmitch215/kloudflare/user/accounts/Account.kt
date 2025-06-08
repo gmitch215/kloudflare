@@ -1,5 +1,7 @@
 package dev.gmitch215.kloudflare.user.accounts
 
+import dev.gmitch215.kloudflare.Identifiable
+import dev.gmitch215.kloudflare.Nameable
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -12,9 +14,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class Account(
-    val id: String,
-    val name: String,
+    override val id: String,
+    override val name: String,
     @SerialName("created_on")
     val creationDate: String? = null,
     val settings: AccountSettings = AccountSettings()
-)
+) : Identifiable, Nameable

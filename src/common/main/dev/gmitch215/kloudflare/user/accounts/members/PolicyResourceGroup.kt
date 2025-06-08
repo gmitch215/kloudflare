@@ -1,5 +1,7 @@
 package dev.gmitch215.kloudflare.user.accounts.members
 
+import dev.gmitch215.kloudflare.Identifiable
+import dev.gmitch215.kloudflare.Nameable
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -12,10 +14,10 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class PolicyResourceGroup(
-    val id: String,
+    override val id: String,
     @SerialName("scope")
     val scopes: List<PolicyResourceGroupScope>,
     @SerialName("meta")
     val metadata: Map<String, String> = emptyMap(),
-    val name: String = ""
-)
+    override val name: String = ""
+) : Identifiable, Nameable

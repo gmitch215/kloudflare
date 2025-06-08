@@ -2,7 +2,9 @@
 
 package dev.gmitch215.kloudflare.user
 
+import dev.gmitch215.kloudflare.Identifiable
 import dev.gmitch215.kloudflare.Kloudflare
+import dev.gmitch215.kloudflare.Nameable
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlin.jvm.JvmName
@@ -156,7 +158,7 @@ class AbuseReport(
     /**
      * The name of the agent.
      */
-    var name: String? = null,
+    override var name: String = "",
     /**
      * Whether the subject is represented by NCSEI.
      */
@@ -199,7 +201,7 @@ class AbuseReport(
      * The trademark symbol, if applicable.
      */
     var trademarkSymbol: String? = null
-)
+) : Nameable
 
 @Serializable
 internal class InternalAbuseReport(
@@ -226,7 +228,7 @@ internal class InternalAbuseReport(
     @SerialName("destination_ips")
     val destinationIps: String? = null,
     val justification: String? = null,
-    val name: String? = null,
+    override val name: String = "",
     @SerialName("ncsei_subject_representation")
     val ncseiSubjectRepresentation: Boolean? = null,
     @SerialName("original_work")
@@ -247,7 +249,7 @@ internal class InternalAbuseReport(
     val trademarkOffice: String? = null,
     @SerialName("trademark_symbol")
     val trademarkSymbol: String? = null,
-) {
+) : Nameable {
     constructor(report: AbuseReport) : this(
         report.type,
         if (report.agree) 1 else 0,
@@ -299,10 +301,10 @@ class AbuseRequest(
 @Serializable
 class AbuseReportResponse(
     @SerialName("abuse_rand")
-    val id: String,
+    override val id: String,
     val request: AbuseRequest,
     val result: String
-)
+) : Identifiable
 
 /**
  * Submits an abuse report for a specific account.

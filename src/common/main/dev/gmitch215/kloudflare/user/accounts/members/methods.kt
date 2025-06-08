@@ -54,7 +54,7 @@ data class CreateMemberWithPolicies(
  * @param member The member to add.
  * @return The member that was added.
  */
-suspend fun Kloudflare.addMember(accountId: String, member: CreateMember): Member = post<CreateMember, Member>("accounts/$accountId/members", member)
+suspend fun Kloudflare.addMember(accountId: String, member: CreateMember) = post<CreateMember, Member>("accounts/$accountId/members", member)
 
 /**
  * Create a member with roles.
@@ -64,7 +64,7 @@ suspend fun Kloudflare.addMember(accountId: String, member: CreateMember): Membe
  * @param member A lambda used to create the member to add.
  * @return The member that was added.
  */
-suspend fun Kloudflare.addMemberWithRoles(accountId: String, member: CreateMemberWithRoles): Member = addMember(accountId, member)
+suspend fun Kloudflare.addMemberWithRoles(accountId: String, member: CreateMemberWithRoles) = addMember(accountId, member)
 
 /**
  * Create a member with roles.
@@ -74,7 +74,7 @@ suspend fun Kloudflare.addMemberWithRoles(accountId: String, member: CreateMembe
  * @param member The member to add.
  * @return The member that was added.
  */
-suspend fun Kloudflare.addMemberWithRoles(accountId: String, member: CreateMemberWithRoles.() -> Unit): Member = addMemberWithRoles(accountId, CreateMemberWithRoles().apply(member))
+suspend fun Kloudflare.addMemberWithRoles(accountId: String, member: CreateMemberWithRoles.() -> Unit) = addMemberWithRoles(accountId, CreateMemberWithRoles().apply(member))
 
 /**
  * Create a member with policies.
@@ -84,7 +84,7 @@ suspend fun Kloudflare.addMemberWithRoles(accountId: String, member: CreateMembe
  * @param member The member to add.
  * @return The member that was added.
  */
-suspend fun Kloudflare.addMemberWithPolicies(accountId: String, member: CreateMemberWithPolicies): Member = addMember(accountId, member)
+suspend fun Kloudflare.addMemberWithPolicies(accountId: String, member: CreateMemberWithPolicies)= addMember(accountId, member)
 
 /**
  * Create a member with policies.
@@ -94,7 +94,7 @@ suspend fun Kloudflare.addMemberWithPolicies(accountId: String, member: CreateMe
  * @param member A lambda used to create the member to add.
  * @return The member that was added.
  */
-suspend fun Kloudflare.addMemberWithPolicies(accountId: String, member: CreateMemberWithPolicies.() -> Unit): Member = addMemberWithPolicies(accountId, CreateMemberWithPolicies().apply(member))
+suspend fun Kloudflare.addMemberWithPolicies(accountId: String, member: CreateMemberWithPolicies.() -> Unit) = addMemberWithPolicies(accountId, CreateMemberWithPolicies().apply(member))
 
 /**
  * Removes a member from an account.

@@ -1,5 +1,6 @@
 package dev.gmitch215.kloudflare.user.accounts.members
 
+import dev.gmitch215.kloudflare.Identifiable
 import dev.gmitch215.kloudflare.user.accounts.Account
 import dev.gmitch215.kloudflare.user.accounts.roles.Role
 import kotlinx.serialization.Serializable
@@ -14,9 +15,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class Member(
-    val id: String,
+    override val id: String,
     val roles: List<Role> = emptyList(),
     val policies: List<Policy> = emptyList(),
     val status: MemberStatus = MemberStatus.PENDING,
     val user: MemberInfo? = null
-)
+) : Identifiable

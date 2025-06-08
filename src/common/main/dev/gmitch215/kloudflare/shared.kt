@@ -44,7 +44,18 @@ data class ResultInfo(
  * @property id The ID.
  */
 @Serializable
-data class Id(val id: String)
+data class Id(override val id: String) : Identifiable
+
+/**
+ * Represents a response with only `id` and `name` fields.
+ * This class is unique to Kloudflare and is not present in the Cloudflare API.
+ * @property id The ID of the entity.
+ */
+@Serializable
+data class IdAndName(
+    override val id: String,
+    override val name: String
+) : Identifiable, Nameable
 
 /**
  * Represents a response with only a `key` field.
